@@ -1,0 +1,18 @@
+<ion-view view-title="Favorites">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="favorite in favorites">
+                <div class="item-avatar">
+                    <img src="{{favorite.img}}" alt="{{favorite.title}}">
+                    <!--<img data-ng-src="{{favorite.img}}" alt="">-->
+                    <h2>{{favorite.title}} - {{favorite.price_f}}</h2>
+                    <p>{{favorite.description}}</p>
+                    <p>Validity: {{favorite.validity | date: 'dd/MM/yyyy'}}</p>
+                </div>
+                <ion-option-button class="button-assertive" ng-click="removeFavorite(favorite)">
+                    Remove
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

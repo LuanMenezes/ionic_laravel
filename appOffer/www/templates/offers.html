@@ -1,0 +1,18 @@
+<ion-view view-title="Offers">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="offer in offers">
+                <div class="item-avatar">
+                    <img src="{{offer.img}}" alt="{{offer.title}}">
+                    <!--<img data-ng-src="{{offer.img}}" alt="">-->
+                    <h2>{{offer.title}} - {{offer.price_f}}</h2>
+                    <p>{{offer.description}}</p>
+                    <p>Validity: {{offer.validity | date: 'dd/MM/yyyy'}}</p>
+                </div>
+                <ion-option-button class="button-energized" ng-click="saveFavorite(offer)">
+                    Favoritos
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
