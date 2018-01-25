@@ -1,0 +1,11 @@
+{
+  "name": "appOffer",
+  "app_id": "com.luanmenezes.appoffer",
+  "type": "ionic1",
+  "integrations": {
+    "gulp": {}
+  },
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}
