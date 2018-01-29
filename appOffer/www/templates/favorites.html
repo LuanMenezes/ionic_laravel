@@ -9,7 +9,7 @@
                     <p>{{favorite.description}}</p>
                     <p>Validity: {{favorite.validity | date: 'dd/MM/yyyy'}}</p>
                 </div>
-                <ion-option-button class="button-assertive" ng-click="removeFavorite(favorite)">
+                <ion-option-button class="button-assertive" ng-click="removeFavorite($index)">
                     Remove
                 </ion-option-button>
             </ion-item>
