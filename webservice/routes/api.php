@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Offer;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/offers', function () {
+    header('Access-Control-Allow-Origin: *');
+    $offers = Offer::all();
+
+    foreach ($offers as $offer){
+        $offer->img = asset($offer->img);
+    }
+
+    return response()->json($offers);
+});

@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">List Offers</div>
+                <div class="panel-heading">List Offers
+                    <a href="{{route('offers.create')}}" class="btn btn-primary btn-sm pull-right">New Offer</a>
+                </div>
 
                 <div class="panel-body">
                     <table class="table table-bordered">
@@ -28,10 +30,15 @@
                                     <td>{{$offer->description}}</td>
                                     <td>{{$offer->price_f}}</td>
                                     <td>{{$offer->validity}}</td>
-                                    <td><img src="{{$offer->img}}" alt="{{$offer->title}}" width="30"></td>
+                                    <td><img src="{{asset($offer->img)}}" alt="{{$offer->title}}" width="30"></td>
+                                    {{--<td><img src="{{$offer->img}}" alt="{{$offer->title}}" width="30"></td>--}}
                                     <td>
-                                        <a class="btn btn-default btn-sm" href="#">Edit</a>
-                                        <a class="btn btn-default btn-sm" href="#">Delete</a>
+                                        <form method="POST" action="{{route('offers.destroy', $offer->id)}}" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <a class="btn btn-default btn-sm" href="{{route('offers.edit', $offer->id)}}">Edit</a>
+                                            <button class="btn btn-default btn-sm">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

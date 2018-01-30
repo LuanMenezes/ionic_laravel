@@ -12,6 +12,6 @@ class Offer extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'validity', 'price', 'img',
+        'title', 'description', 'validity', 'price', 'price_f', 'img',
     ];
 }
